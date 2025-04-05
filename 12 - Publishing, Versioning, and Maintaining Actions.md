@@ -207,19 +207,19 @@ This creates a permanent, versioned snapshot of your action's code.
 
 ```mermaid
 graph LR
-    subgraph Repository [Action Repository]
+    subgraph "Repository [Action Repository]"
         A[action.yml]
         R[README.md]
         L[LICENSE]
         C[Source Code]
-        T[Git Tag (e.g., v1.0.0)] --> Rel(GitHub Release)
+        T["Git Tag (e.g., v1.0.0)"] --> Rel(GitHub Release)
     end
 
     Rel -- Publishes --> M(GitHub Marketplace Listing)
     M -- Displays --> Meta(Metadata from action.yml)
     M -- Displays --> Doc(README Content)
     M -- Links to --> Rel
-    U[Workflow User] -- Uses --> Ref(owner/repo@v1.0.0)
+    U[Workflow User] -- Uses --> Ref("owner/repo@v1.0.0")
     Ref -- Points to --> T
 
     style M fill:#f9f,stroke:#333,stroke-width:2px

@@ -29,7 +29,7 @@ graph TD
     subgraph GitHub Marketplace
         C
     end
-    subgraph Workflow File (`.github/workflows/`)
+    subgraph "Workflow File (`.github/workflows/`)"
         E
     end
     subgraph GitHub Actions Runner

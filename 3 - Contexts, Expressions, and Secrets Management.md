@@ -669,14 +669,14 @@ Expressions are the glue that connects contexts and workflow logic.
 
 ```mermaid
 graph TD
-    A[Start Expression Evaluation: `${{ <expr> }}`] --> B{Parse Expression};
+    A["Start Expression Evaluation: `${{ <expr> }}`"] --> B{Parse Expression};
     B -- Syntax OK --> C{Identify Contexts/Literals/Functions/Operators};
     B -- Syntax Error --> Z[Fail Workflow/Step];
-    C --> D{Fetch Context Data (e.g., `github`, `steps`)};
-    D --> E{Execute Functions (e.g., `contains`, `format`)};
-    E --> F{Apply Operators (e.g., `==`, `&&`)};
+    C --> D{"Fetch Context Data (e.g., `github`, `steps`)"};
+    D --> E{"Execute Functions (e.g., `contains`, `format`)"};
+    E --> F{"Apply Operators (e.g., `==`, `&&`)"};
     F --> G{Determine Final Value};
-    G --> H[Use Value (e.g., in `if`, `with`, `env`)];
+    G --> H["Use Value (e.g., in `if`, `with`, `env`)"];
     D -- Context Not Found/Invalid Property --> G(Result: Empty String or Error);
     E -- Function Error --> Z;
 

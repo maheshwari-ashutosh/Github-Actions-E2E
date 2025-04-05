@@ -115,12 +115,12 @@ graph LR
         D[File System]
     end
 
-    subgraph Action Code (index.js)
-        E[@actions/core]
-        F[@actions/github]
-        G[@actions/exec]
-        H[@actions/io]
-        I[@actions/tool-cache]
+    subgraph "Action Code (index.js)" as HHH
+        E["@actions/core"]
+        F["@actions/github"]
+        G["@actions/exec"]
+        H["@actions/io"]
+        I["@actions/tool-cache"]
     end
 
     J[GitHub API]
@@ -133,7 +133,7 @@ graph LR
     H -- Manipulates --> D;
     I -- Manages --> L; I -- Interacts --> D;
 
-    A -- Executes --> Action Code;
+    A -- Executes --> HHH;
 ```
 
 **Diagram Explanation:** This diagram shows how the core `@actions/*` toolkit packages act as intermediaries between your JavaScript action code and the underlying runner environment features (Node.js, workflow commands, environment variables, file system) as well as external resources like the GitHub API, external tools, and the tool cache.

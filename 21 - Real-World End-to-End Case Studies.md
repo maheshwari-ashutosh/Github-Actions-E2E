@@ -246,23 +246,23 @@ graph LR
     B -- Service B --> D[Run Service B CI];
     C --> E{Build & Unit Test};
     D --> F{Build & Unit Test};
-    E --> G[Scan Image (Trivy)];
-    F --> H[Scan Image (Trivy)];
+    E --> G["Scan Image (Trivy)"];
+    F --> H["Scan Image (Trivy)"];
     subgraph "Merge to Main"
         direction LR
         I[Push to Main] --> J{Trigger Deploy Staging};
         J --> K[Build All Changed Images];
-        K --> L[Push Images (GHCR)];
-        L --> M[Deploy to Staging (Helm/Kustomize)];
+        K --> L["Push Images (GHCR)"];
+        L --> M["Deploy to Staging (Helm/Kustomize)"];
         M --> N[Run Integration Tests];
         N --> O[Notify Success/Failure];
     end
     subgraph "PR Checks"
         direction LR
         P[PR Created/Updated] --> Q{Trigger CI Workflows};
-        Q -- Service A Changed --> R[Run Service A CI (No Push)];
+        Q -- Service A Changed --> R["Run Service A CI (No Push)"];
         R --> S[Run CodeQL Scan];
-        Q -- Service B Changed --> T[Run Service B CI (No Push)];
+        Q -- Service B Changed --> T["Run Service B CI (No Push)"];
         T --> U[Run CodeQL Scan];
     end
     A --> P;
@@ -270,7 +270,6 @@ graph LR
     D --> U;
     G --> I;
     H --> I;
-
 ```
 
 **Diagram Explanation:** This diagram illustrates a potential CI/CD flow for a microservices application in a monorepo. Pull Requests trigger individual service CI pipelines including tests and security scans. Merges to the main branch trigger a deployment workflow that builds necessary images, pushes them to a registry, deploys to a staging environment using Helm/Kustomize, runs integration tests, and sends notifications.
@@ -353,7 +352,7 @@ Manually creating releases, generating changelogs, and publishing packages is te
 
 ```mermaid
 graph TD
-    A[Event (e.g., PR, Push, Schedule)] --> B(Workflow Trigger);
+    A["Event (e.g., PR, Push, Schedule)"] --> B(Workflow Trigger);
     B --> C{Workflow Run};
     C --> D[Job 1];
     C --> E[Job 2];
@@ -364,7 +363,7 @@ graph TD
     E --> J[Step 2: run: pip install -r reqs.txt];
     subgraph Runner Environment
         direction LR
-        K[OS (Ubuntu, Windows, macOS)]
+        K["OS (Ubuntu, Windows, macOS)"]
         L[Installed Software]
         M[Filesystem Workspace]
     end

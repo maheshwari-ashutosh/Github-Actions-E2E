@@ -262,7 +262,7 @@ jobs:
 graph LR
     subgraph GitHub Actions Runner
         direction LR
-        A[Workflow Trigger (e.g., Push)] --> B(Checkout Code);
+        A["Workflow Trigger (e.g., Push)"] --> B(Checkout Code);
         B --> C(Setup Ansible);
         C --> D{Run Ansible Playbook};
     end

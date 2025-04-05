@@ -404,7 +404,7 @@ jobs:
 graph TD
     subgraph GitHub Runner Host
         subgraph Docker Network
-            A[Job Container (ubuntu-latest)] -- Connects via hostname 'postgres' on port 5432 --> B(Service Container 'postgres');
+            A["Job Container (ubuntu-latest)"] -- Connects via hostname 'postgres' on port 5432 --> B("Service Container 'postgres'");
         end
     end
 

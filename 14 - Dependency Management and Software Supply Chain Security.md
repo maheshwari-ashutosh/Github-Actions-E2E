@@ -11,7 +11,7 @@ The software supply chain encompasses everything and everyone involved in the de
 ```mermaid
 graph LR
     A[Developer Writes Code] --> B(Source Code Repository);
-    B --> C{CI/CD Pipeline (GitHub Actions)};
+    B --> C{"CI/CD Pipeline (GitHub Actions)"};
     D(External Dependencies) --> C;
     C --> E[Build Process];
     E --> F(Built Artifacts);

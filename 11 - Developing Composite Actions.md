@@ -27,15 +27,15 @@ Composite actions directly address this by allowing you to encapsulate such a se
 
 ```mermaid
 graph TD
-    subgraph Workflow A (Build)
+    subgraph "Workflow A (Build)"
         A1[Checkout Code] --> A2[Setup Go] --> A3[Install Deps] --> A4[Build Binary] --> A5[Upload Artifact]
     end
 
-    subgraph Workflow B (Test)
+    subgraph "Workflow B (Test)"
         B1[Checkout Code] --> B2[Setup Go] --> B3[Install Deps] --> B4[Run Tests]
     end
 
-    subgraph Workflow C (Lint)
+    subgraph "Workflow C (Lint)"
         C1[Checkout Code] --> C2[Setup Go] --> C3[Install Deps] --> C4[Run Linter]
     end
 
@@ -57,21 +57,20 @@ graph TD
         CA --> |Contains| Steps(Checkout Code, Setup Go, Install Deps)
     end
 
-    subgraph Workflow A' (Build - Using Composite)
+    subgraph "Workflow A' (Build - Using Composite)"
         A1_C[uses: ./actions/setup-prepare] --> A4'[Build Binary] --> A5'[Upload Artifact]
         style A1_C fill:#cfc,stroke:#333,stroke-width:2px
     end
 
-    subgraph Workflow B' (Test - Using Composite)
+    subgraph "Workflow B' (Test - Using Composite)"
         B1_C[uses: ./actions/setup-prepare] --> B4'[Run Tests]
         style B1_C fill:#cfc,stroke:#333,stroke-width:2px
     end
 
-    subgraph Workflow C' (Lint - Using Composite)
+    subgraph "Workflow C' (Lint - Using Composite)"
         C1_C[uses: ./actions/setup-prepare] --> C4'[Run Linter]
         style C1_C fill:#cfc,stroke:#333,stroke-width:2px
     end
-
 ```
 
 - **Diagram Explanation:** This diagram illustrates the problem of duplicated setup steps (highlighted in red) across multiple workflows. It then shows how a composite action (highlighted in green) encapsulates these common steps, allowing each workflow to call the action with a single `uses:` statement, leading to cleaner and more maintainable workflows.
@@ -183,10 +182,10 @@ graph LR
 
         subgraph CA_Call [Composite Action Execution]
             direction TB
-            Metadata[action.yml<br/>(using: composite)] -- Defines --> StepsList(steps:)
-            StepsList --> CompStep1[Step 1: uses: actions/checkout@v4]
+            Metadata["action.yml<br/>(using: composite)"] -- Defines --> StepsList(steps:)
+            StepsList --> CompStep1["Step 1: uses: actions/checkout@v4"]
             CompStep1 --> CompStep2[Step 2: run: echo Hello]
-            CompStep2 --> CompStep3[Step 3: uses: actions/setup-node@v4]
+            CompStep2 --> CompStep3["Step 3: uses: actions/setup-node@v4"]
             CompStep3 --> CompStep4[Step 4: run: npm ci]
         end
     end

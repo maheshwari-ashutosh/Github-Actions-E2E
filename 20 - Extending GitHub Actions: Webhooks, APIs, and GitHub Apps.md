@@ -88,10 +88,10 @@ graph LR
         A[External Event e.g., CMS Update] --> B{Trigger Logic};
     end
     subgraph GitHub API
-        C[POST /repos/{owner}/{repo}/dispatches];
+        C["POST /repos/{owner}/{repo}/dispatches"];
     end
     subgraph GitHub Actions
-        D(Workflow listening on `repository_dispatch`);
+        D("Workflow listening on `repository_dispatch`");
         E[Workflow Job Executes];
     end
 
@@ -258,11 +258,11 @@ graph TD
     end
     subgraph GitHub API
         B[API Endpoints]
-        B1[/actions/runs]
-        B2[/actions/runs/{run_id}/jobs]
-        B3[/actions/jobs/{job_id}/logs]
-        B4[/actions/runs/{run_id}/artifacts]
-        B5[/actions/artifacts/{artifact_id}/zip]
+        B1["/actions/runs"]
+        B2["/actions/runs/{run_id}/jobs"]
+        B3["/actions/jobs/{job_id}/logs"]
+        B4["/actions/runs/{run_id}/artifacts"]
+        B5["/actions/artifacts/{artifact_id}/zip"]
         B --> B1 & B2 & B3 & B4 & B5
     end
     subgraph GitHub Actions Data

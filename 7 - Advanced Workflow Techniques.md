@@ -349,26 +349,25 @@ If you push to `develop`, the workflow starts. If you immediately push again _be
 
 ```mermaid
 graph TD
-    subgraph Concurrency Group "my-workflow-main"
+    subgraph "Concurrency Group my-workflow-main"
         direction LR
-        R1[Run 1 (Triggered)] --> P1{In Progress};
-        R2[Run 2 (Triggered)] --> Q1{Queued / Pending};
+        R1["Run 1 (Triggered)"] --> P1{In Progress};
+        R2["Run 2 (Triggered)"] --> Q1{Queued / Pending};
     end
 
-    subgraph Concurrency Group "my-workflow-main" with cancel-in-progress: true
+    subgraph "Concurrency Group my-workflow-main with cancel-in-progress: true"
         direction LR
-        R3[Run 3 (Triggered)] --> P3{In Progress};
-        R4[Run 4 (Triggered)] --> C3(Cancel Run 3);
+        R3["Run 3 (Triggered)"] --> P3{In Progress};
+        R4["Run 4 (Triggered)"] --> C3(Cancel Run 3);
         C3 --> P4{Run 4 In Progress};
     end
 
-    subgraph Concurrency Group "deploy-prod"
+    subgraph "Concurrency Group 'deploy-prod'"
         direction LR
-        R5[Run 5 (Deploy Triggered)] --> P5{In Progress};
-        R6[Run 6 (Deploy Triggered)] --> Q2{Queued / Pending};
+        R5["Run 5 (Deploy Triggered)"] --> P5{In Progress};
+        R6["Run 6 (Deploy Triggered)"] --> Q2{Queued / Pending};
         P5 -- Completes --> R6_Starts[Run 6 Starts];
     end
-
 ```
 
 **Diagram Explanation:** This diagram shows two scenarios for concurrency control. The top shows the default behavior where a new run (Run 2) waits for the current run (Run 1) in the same group to finish. The middle shows `cancel-in-progress: true`, where a new run (Run 4) cancels the ongoing run (Run 3) and starts immediately. The bottom illustrates a typical deployment scenario where queuing prevents simultaneous deployments (Run 6 waits for Run 5).

@@ -15,7 +15,7 @@ graph LR
     C -- Defines --> D[Workflow: CI Pipeline];
     D -- Executes --> E[Job: Build];
     E -- Executes --> F[Job: Test];
-    F -- Executes --> G[Job: Deploy (Optional)];
+    F -- Executes --> G["Job: Deploy (Optional)"];
 ```
 
 **Diagram Explanation:** This simple diagram illustrates a common CI/CD (Continuous Integration/Continuous Deployment) flow triggered by a code push. GitHub Actions reads the workflow definition file (`ci.yml`) and executes the defined jobs (Build, Test, potentially Deploy) in sequence. This chapter focuses on the structure and syntax within that `.yml` file.

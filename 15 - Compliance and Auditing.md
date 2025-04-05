@@ -44,10 +44,10 @@ Monitoring these events helps detect suspicious activity, enforce policies, and 
 
 ```mermaid
 graph LR
-    A[GitHub Action Event<br/>(e.g., Workflow Run, Secret Change, Runner Reg)] --> B(GitHub Platform);
-    B --> C{Audit Log<br/>(Org/Enterprise)};
-    C --> D[Security Team/Admin<br/>(Review/Query via UI/API)];
-    C --> E[SIEM/Monitoring Tool<br/>(API Integration/Streaming)];
+    A["GitHub Action Event<br/>(e.g., Workflow Run, Secret Change, Runner Reg)"] --> B(GitHub Platform);
+    B --> C{"Audit Log<br/>(Org/Enterprise)"};
+    C --> D["Security Team/Admin<br/>(Review/Query via UI/API)"];
+    C --> E["SIEM/Monitoring Tool<br/>(API Integration/Streaming)"];
     D --> F(Investigation/Reporting);
     E --> G(Automated Alerting/Analysis);
 ```
@@ -131,7 +131,7 @@ GitHub and GitHub Actions provide numerous features that can be leveraged to mee
 
 ```mermaid
 graph TD
-    subgraph Compliance Framework Requirements (SOC 2, ISO 27001, etc.)
+    subgraph "Compliance Framework Requirements (SOC 2, ISO 27001, etc.)"
         Req1[Access Control]
         Req2[Change Management]
         Req3[Auditability]
