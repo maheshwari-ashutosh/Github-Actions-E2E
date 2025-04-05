@@ -77,8 +77,6 @@ Contributions, suggestions, and error reporting are welcome! Please feel free to
 
 ## License
 
-This work is licensed under the [Your Chosen License - e.g., MIT, CC BY-SA 4.0]. Please see the `LICENSE` file for full details.
-
-_(Make sure to add a LICENSE file to your repository and update the badge/link accordingly!)_
+This work is licensed under the MIT License. Please see the `LICENSE` file for full details.
 
 ---
