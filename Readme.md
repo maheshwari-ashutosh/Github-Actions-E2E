@@ -27,12 +27,12 @@ This book is structured into distinct parts, guiding the reader from foundationa
 ### Part I: Foundations and Core Concepts
 
 - [Chapter 1: Introduction to Workflow Automation and GitHub Actions](1%20-%20Introduction%20to%20Workflow%20Automation%20and%20GitHub%20Actions.md)
-- [Chapter 2: Anatomy of a Workflow: Deep Dive into Syntax and Structure](2%20-%20Anatomy%20of%20a%20Workflow%20Deep%20Dive%20into%20Syntax%20and%20Structure.md)
+- [Chapter 2: Anatomy of a Workflow: Deep Dive into Syntax and Structure](2%20-%20Anatomy%20of%20a%20Workflow:%20Deep%20Dive%20into%20Syntax%20and%20Structure.md)
 - [Chapter 3: Contexts, Expressions, and Secrets Management](3%20-%20Contexts%2C%20Expressions%2C%20and%20Secrets%20Management.md)
 
 ### Part II: Core Workflow Patterns and Techniques
 
-- [Chapter 4: Working with Actions: Finding, Using, and Managing](4%20-%20Working%20with%20Actions%20Finding%2C%20Using%2C%20and%20Managing.md)
+- [Chapter 4: Working with Actions: Finding, Using, and Managing](4%20-%20Working%20with%20Actions:%20Finding%2C%20Using%2C%20and%20Managing.md)
 - [Chapter 5: Building and Testing Software with GitHub Actions](5%20-%20Building%20and%20Testing%20Software%20with%20GitHub%20Actions.md)
 - [Chapter 6: Deployment Strategies with GitHub Actions](6%20-%20Deployment%20Strategies%20with%20GitHub%20Actions.md)
 - [Chapter 7: Advanced Workflow Techniques](7%20-%20Advanced%20Workflow%20Techniques.md)
@@ -47,7 +47,7 @@ This book is structured into distinct parts, guiding the reader from foundationa
 
 ### Part IV: Security and Compliance
 
-- [Chapter 13: Securing Your Workflows: Principles and Practices](13%20-%20Securing%20Your%20Workflows%20Principles%20and%20Practices.md)
+- [Chapter 13: Securing Your Workflows: Principles and Practices](13%20-%20Securing%20Your%20Workflows:%20Principles%20and%20Practices.md)
 - [Chapter 14: Dependency Management and Software Supply Chain Security](14%20-%20Dependency%20Management%20and%20Software%20Supply%20Chain%20Security.md)
 - [Chapter 15: Compliance and Auditing](15%20-%20Compliance%20and%20Auditing.md)
 
@@ -60,7 +60,7 @@ This book is structured into distinct parts, guiding the reader from foundationa
 ### Part VI: Ecosystem Integration and Advanced Scenarios
 
 - [Chapter 19: Integrating with Cloud Providers (AWS, Azure, GCP)](<19%20-%20Integrating%20with%20Cloud%20Providers%20(AWS%2C%20Azure%2C%20GCP).md>)
-- [Chapter 20: Extending GitHub Actions: Webhooks, APIs, and GitHub Apps](20%20-%20Extending%20GitHub%20Actions%20Webhooks%2C%20APIs%2C%20and%20GitHub%20Apps.md)
+- [Chapter 20: Extending GitHub Actions: Webhooks, APIs, and GitHub Apps](20%20-%20Extending%20GitHub%20Actions:%20Webhooks%2C%20APIs%2C%20and%20GitHub%20Apps.md)
 - [Chapter 21: Real-World End-to-End Case Studies](21%20-%20Real-World%20End-to-End%20Case%20Studies.md)
 
 _(Note: Appendices containing reference material like YAML syntax, function libraries, event lists, glossary, and troubleshooting guides are part of the complete book structure but are not listed here for brevity. They will be included in the final published version.)_
